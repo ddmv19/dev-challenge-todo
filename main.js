@@ -1,15 +1,12 @@
 import './style.css'
 import { addNewTask } from './js/app';
+import { tasks } from './js/tasks';
 
 const typesOfTodos = document.querySelectorAll('.type');
 
 const taskInput = document.querySelector('#task-input');
 
 export const todosContainer = document.querySelector('.todos-container');
-
-let tasks = localStorage.getItem('tasks') 
-              ? JSON.parse(localStorage.getItem('tasks'))
-              : [];
 
 let typeSelected = 'all';
 
@@ -73,10 +70,10 @@ todosContainer.addEventListener('click', e => {
     const liElement = element.parentNode;
     const input = element.previousElementSibling; // Obtenenemos el elemento o etiqueta de encima
     const taskToEliminate = tasks.find( task => task.task === input.getAttribute('name'));
-    tasks = tasks.filter(todo => todo.task != taskToEliminate.task);
+    let newTasks = tasks.filter(todo => todo.task != taskToEliminate.task);
     liElement.remove();
+    localStorage.setItem('tasks', JSON.stringify(newTasks));
   }
-  localStorage.setItem('tasks', JSON.stringify(tasks));
 });
 
 
