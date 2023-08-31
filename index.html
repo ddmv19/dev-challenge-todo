@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="shortcut icon" href="public/to-do-list.png" type="image/x-icon">
+  </head>
+  <body>
+    <div id="main">
+      <h1>ToDo</h1>
+      <ul class="types-todos">
+        <li id="all-todos" class="type select">All</li>
+        <li id="active-todos" class="type">Active</li>
+        <li id="completed-todos" class="type">Completed</li>
+      </ul>
+      <div class="input-container">
+        <input type="text" placeholder="Write task here" id="task-input">
+        <button>Add</button>
+      </div>
+      <ul class="todos-container">
+      </ul>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
