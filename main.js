@@ -25,16 +25,14 @@ typesOfTodos.forEach((type) => {
     }
     const optionTodos = type.getAttribute('id');
     todosContainer.innerHTML = '';
+    tasks = loadTasksLocalStorage();
     if(optionTodos.includes('all')) {
-      tasks = loadTasksLocalStorage();
       tasks.forEach(task => addNewTask( task ));
       typeSelected = 'all';
     } else if(optionTodos.includes('active')) {
-      tasks = loadTasksLocalStorage();
       tasks.filter(task => !task.completed).forEach(taskActive => addNewTask(taskActive));
       typeSelected = 'active';
     } else if(optionTodos.includes('completed')) {
-      tasks = loadTasksLocalStorage();
       tasks.filter(task => task.completed).forEach(taskCompleted => addNewTask(taskCompleted));
       typeSelected = 'completed';
     }
