@@ -29,7 +29,7 @@ pnpm start
 
 ## Status
 
-This project is still under development.
+This project is completed, only sometimes an error in the console, but it doesn't affect the funcionality of the application.
 
 ## Links
 
